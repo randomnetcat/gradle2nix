@@ -28,10 +28,21 @@ application {
     mainClass.set("org.nixos.gradle2nix.MainKt")
     applicationName = "gradle2nix"
     applicationDefaultJvmArgs += "-Dorg.nixos.gradle2nix.share=@APP_HOME@/share"
-    applicationDistribution
-        .from(tasks.getByPath(":plugin:shadowJar"), "$rootDir/gradle-env.nix")
-        .into("share")
-        .rename("plugin.*\\.jar", "plugin.jar")
+
+    applicationDistribution.with(copySpec {
+        val currentPath = rootDir.resolve("gradle-env.nix")
+        val nextPath = rootDir.resolve("gradle-env.nix.next")
+
+        from(if (nextPath.exists()) nextPath else currentPath)
+        rename("gradle-env\\.nix\\.next", "gradle-env.nix")
+        into("share")
+    })
+
+    applicationDistribution.with(copySpec {
+        from(tasks.getByPath(":plugin:shadowJar"))
+        into("share")
+        rename("plugin.*\\.jar", "plugin.jar")
+    })
 }
 
 sourceSets {
