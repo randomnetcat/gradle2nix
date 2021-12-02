@@ -88,32 +88,42 @@ internal class ConfigurationResolver(
         return (topLevelMetadata + allArtifacts).filter { it.urls.isNotEmpty() }
     }
 
+    private val artifactCache = mutableMapOf<ResolvedArtifact, List<DefaultArtifact>>()
+
     private fun resolve(resolvedArtifact: ResolvedArtifact): List<DefaultArtifact> {
-        val componentId = resolvedArtifact.id.componentIdentifier as ModuleComponentIdentifier
+        return artifactCache.computeIfAbsent(resolvedArtifact) { _ ->
+            val componentId = resolvedArtifact.id.componentIdentifier as ModuleComponentIdentifier
 
-        val artifactId = DefaultArtifactIdentifier(
-            group = componentId.group,
-            name = componentId.module,
-            version = componentId.version,
-            type = resolvedArtifact.type,
-            extension = resolvedArtifact.extension,
-            classifier = resolvedArtifact.classifier
-        )
+            val artifactId = DefaultArtifactIdentifier(
+                group = componentId.group,
+                name = componentId.module,
+                version = componentId.version,
+                type = resolvedArtifact.type,
+                extension = resolvedArtifact.extension,
+                classifier = resolvedArtifact.classifier
+            )
 
-        val sha256 = resolvedArtifact.computeHash()
-        val artifacts = resolvers.mapNotNull { it.resolve(artifactId, sha256) }.merge()
-        if (artifacts.isEmpty()) failed.add(artifactId)
-        return artifacts + componentId.run { resolveMetadata(group, module, version) }
+            val sha256 = resolvedArtifact.computeHash()
+            val artifacts = resolvers.mapNotNull { it.resolve(artifactId, sha256) }.merge()
+            if (artifacts.isEmpty()) failed.add(artifactId)
+
+            artifacts + componentId.run { resolveMetadata(group, module, version) }
+        }
     }
+
+    private data class MetadataKey(val group: String, val name: String, val version: String)
+    private val metadataCache = mutableMapOf<MetadataKey, List<DefaultArtifact>>()
 
     private fun resolveMetadata(
         group: String,
         name: String,
         version: String
     ): List<DefaultArtifact> {
-        return resolvePoms(group, name, version) +
-            resolveDescriptors(group, name, version) +
-            resolveGradleMetadata(group, name, version)
+        return metadataCache.computeIfAbsent(MetadataKey(group = group, name = name, version = version)) { _ ->
+            resolvePoms(group, name, version) +
+                    resolveDescriptors(group, name, version) +
+                    resolveGradleMetadata(group, name, version)
+        }
     }
 
     private fun resolvePoms(
