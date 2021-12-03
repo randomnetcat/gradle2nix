@@ -3,15 +3,15 @@ plugins {
 }
 
 dependencies {
-    api("org.apache.ivy:ivy:latest.release")
-    api("com.amazonaws:aws-java-sdk-s3:latest.release")
+    api("org.apache.ivy:ivy:2.5.0")
+    api("com.amazonaws:aws-java-sdk-s3:1.11.946")
 
-    testImplementation("com.adobe.testing:s3mock-junit5:latest.release")
-    testImplementation("io.strikt:strikt-core:latest.release")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:latest.release")
-    testImplementation("org.junit.jupiter:junit-jupiter-params:latest.release")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:latest.release")
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher:latest.release")
+    testImplementation("com.adobe.testing:s3mock-junit5:2.1.28")
+    testImplementation("io.strikt:strikt-core:0.28.2")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:5.7.0")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.0")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher:5.7.0")
 }
 
 tasks {

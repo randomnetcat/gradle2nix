@@ -10,18 +10,18 @@ dependencies {
     implementation(project(":model"))
     implementation(kotlin("reflect"))
     implementation("org.gradle:gradle-tooling-api:${gradle.gradleVersion}")
-    implementation("com.github.ajalt:clikt:latest.release")
-    implementation("org.slf4j:slf4j-api:latest.release")
-    runtimeOnly("org.slf4j:slf4j-simple:latest.release")
-    implementation("com.squareup.moshi:moshi-adapters:latest.release")
-    implementation("com.squareup.moshi:moshi-kotlin:latest.release")
-    kapt("com.squareup.moshi:moshi-kotlin-codegen:latest.release")
-    implementation("com.squareup.okio:okio:latest.release")
+    implementation("com.github.ajalt:clikt:2.8.0")
+    implementation("org.slf4j:slf4j-api:2.0.0-alpha1")
+    runtimeOnly("org.slf4j:slf4j-simple:2.0.0-alpha1")
+    implementation("com.squareup.moshi:moshi-adapters:1.11.0")
+    implementation("com.squareup.moshi:moshi-kotlin:1.11.0")
+    kapt("com.squareup.moshi:moshi-kotlin-codegen:1.11.0")
+    implementation("com.squareup.okio:okio:3.0.0-alpha.1")
 
     testRuntimeOnly(kotlin("reflect"))
-    testImplementation("org.spekframework.spek2:spek-dsl-jvm:latest.release")
-    testRuntimeOnly("org.spekframework.spek2:spek-runner-junit5:latest.release")
-    testImplementation("io.strikt:strikt-core:latest.release")
+    testImplementation("org.spekframework.spek2:spek-dsl-jvm:2.0.15")
+    testRuntimeOnly("org.spekframework.spek2:spek-runner-junit5:2.0.15")
+    testImplementation("io.strikt:strikt-core:0.28.2")
 }
 
 application {
