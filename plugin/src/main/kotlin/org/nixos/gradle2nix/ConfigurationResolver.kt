@@ -78,8 +78,9 @@ internal class ConfigurationResolver(
             )
         })
 
-        val topLevelMetadata = resolved.firstLevelModuleDependencies
+        val topLevelMetadata = resolved.allModuleDependencies
             .flatMap { resolveMetadata(it.moduleGroup, it.moduleName, it.moduleVersion) }
+            .distinct()
 
         val allArtifacts = resolved.artifacts
             .filter { it.id.componentIdentifier is ModuleComponentIdentifier }
