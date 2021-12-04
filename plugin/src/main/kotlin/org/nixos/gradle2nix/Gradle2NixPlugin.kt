@@ -16,6 +16,7 @@ import org.gradle.kotlin.dsl.newInstance
 import org.gradle.kotlin.dsl.support.serviceOf
 import org.gradle.kotlin.dsl.withType
 import org.gradle.plugin.management.PluginRequest
+import org.gradle.plugin.use.internal.PluginDependencyResolutionServices
 import org.gradle.tooling.provider.model.ToolingModelBuilder
 import org.gradle.tooling.provider.model.ToolingModelBuilderRegistry
 import org.gradle.util.GradleVersion
@@ -213,10 +214,16 @@ private fun Project.buildProject(
 private fun Project.buildscriptDependencies(
     pluginArtifacts: List<DefaultArtifact>
 ): Pair<List<DefaultArtifact>, List<ArtifactIdentifier>> {
+    val explicitRepositories = buildscript.repositories.filterIsInstance<ResolutionAwareRepository>()
+
+    val builtinRepositories = serviceOf<PluginDependencyResolutionServices>()
+        .resolveRepositoryHandler
+        .filterIsInstance<ResolutionAwareRepository>()
+
     val resolverFactory = ConfigurationResolverFactory(
         this,
         ConfigurationScope.BUILDSCRIPT,
-        buildscript.repositories.filterIsInstance<ResolutionAwareRepository>()
+        (explicitRepositories + builtinRepositories).distinct()
     )
     val resolver = resolverFactory.create(buildscript.dependencies)
     val pluginIds = pluginArtifacts.map(DefaultArtifact::id)
