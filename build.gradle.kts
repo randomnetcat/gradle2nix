@@ -24,16 +24,16 @@ allprojects {
                 }
             }
         }
+    }
 
-        tasks.register("lock") {
-            doFirst {
-                assert(gradle.startParameter.isWriteDependencyLocks)
-                file("buildscript-gradle.lockfile").delete()
-                file("gradle.lockfile").delete()
-            }
-            doLast {
-                configurations.matching { it.isCanBeResolved }.all { resolve() }
-            }
+    tasks.register("lock") {
+        doFirst {
+            assert(gradle.startParameter.isWriteDependencyLocks)
+            file("buildscript-gradle.lockfile").delete()
+            file("gradle.lockfile").delete()
+        }
+        doLast {
+            configurations.matching { it.isCanBeResolved }.all { resolve() }
         }
     }
 }
