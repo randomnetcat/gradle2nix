@@ -27,7 +27,6 @@ dependencies {
 application {
     mainClass.set("org.nixos.gradle2nix.MainKt")
     applicationName = "gradle2nix"
-    applicationDefaultJvmArgs += "-Dorg.nixos.gradle2nix.share=@APP_HOME@/share"
 
     applicationDistribution.with(copySpec {
         val currentPath = rootDir.resolve("gradle-env.nix")
@@ -63,8 +62,8 @@ tasks {
 
     startScripts {
         doLast {
-            unixScript.writeText(unixScript.readText().replace("@APP_HOME@", "\$APP_HOME"))
-            windowsScript.writeText(windowsScript.readText().replace("@APP_HOME@", "%APP_HOME%"))
+            unixScript.writeText(unixScript.readText().replace("exec \"\$JAVACMD\"", "exec \"\$JAVACMD\" \"-Dorg.nixos.gradle2nix.share=\$APP_HOME/share\""))
+            windowsScript.writeText(windowsScript.readText().replace("\"%JAVA_EXE%\" %DEFAULT_JVM_OPTS%", "\"%JAVA_EXE%\" \"-Dorg.nixos.gradle2nix.share=%APP_HOME%\" %DEFAULT_JVM_OPTS%"))
         }
     }
 
