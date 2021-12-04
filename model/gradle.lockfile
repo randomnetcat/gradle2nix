@@ -1,0 +1,47 @@
+# This is a Gradle generated file for dependency locking.
+# Manual edits can break the build and are not advised.
+# This file is expected to be part of source control.
+com.google.auto.service:auto-service-annotations:1.0-rc7=kapt,kaptClasspath_kaptKotlin
+com.google.code.findbugs:jsr305:3.0.2=kapt,kaptClasspath_kaptKotlin
+com.google.errorprone:error_prone_annotations:2.3.4=kapt,kaptClasspath_kaptKotlin
+com.google.guava:failureaccess:1.0.1=kapt,kaptClasspath_kaptKotlin
+com.google.guava:guava:29.0-jre=kapt,kaptClasspath_kaptKotlin
+com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava=kapt,kaptClasspath_kaptKotlin
+com.google.j2objc:j2objc-annotations:1.3=kapt,kaptClasspath_kaptKotlin
+com.squareup.moshi:moshi-kotlin-codegen:1.12.0=kapt,kaptClasspath_kaptKotlin
+com.squareup.moshi:moshi:1.12.0=compileClasspath,kapt,kaptClasspath_kaptKotlin
+com.squareup.okio:okio:2.10.0=compileClasspath,kapt,kaptClasspath_kaptKotlin
+com.squareup:kotlinpoet-classinspector-elements:1.8.0=kapt,kaptClasspath_kaptKotlin
+com.squareup:kotlinpoet-metadata-specs:1.8.0=kapt,kaptClasspath_kaptKotlin
+com.squareup:kotlinpoet-metadata:1.8.0=kapt,kaptClasspath_kaptKotlin
+com.squareup:kotlinpoet:1.8.0=kapt,kaptClasspath_kaptKotlin
+net.ltgt.gradle.incap:incap:0.3=kapt,kaptClasspath_kaptKotlin
+net.swiftzer.semver:semver:1.1.1=compileClasspath
+org.checkerframework:checker-qual:2.11.1=kapt,kaptClasspath_kaptKotlin
+org.jetbrains.intellij.deps:trove4j:1.0.20181211=kotlinCompilerClasspath,kotlinCompilerPluginClasspathMain,kotlinKaptWorkerDependencies
+org.jetbrains.kotlin:kotlin-annotation-processing-gradle:1.5.31=kotlinCompilerPluginClasspathMain,kotlinKaptWorkerDependencies
+org.jetbrains.kotlin:kotlin-compiler-embeddable:1.5.31=kotlinCompilerClasspath,kotlinCompilerPluginClasspathMain,kotlinKaptWorkerDependencies
+org.jetbrains.kotlin:kotlin-daemon-embeddable:1.5.31=kotlinCompilerClasspath,kotlinCompilerPluginClasspathMain,kotlinKaptWorkerDependencies
+org.jetbrains.kotlin:kotlin-reflect:1.4.31=kapt,kaptClasspath_kaptKotlin
+org.jetbrains.kotlin:kotlin-reflect:1.5.31=kotlinCompilerClasspath,kotlinCompilerPluginClasspathMain,kotlinKaptWorkerDependencies
+org.jetbrains.kotlin:kotlin-script-runtime:1.5.31=kotlinCompilerClasspath,kotlinCompilerPluginClasspathMain,kotlinKaptWorkerDependencies
+org.jetbrains.kotlin:kotlin-scripting-common:1.5.31=kotlinCompilerPluginClasspathMain
+org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:1.5.31=kotlinCompilerPluginClasspathMain
+org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:1.5.31=kotlinCompilerPluginClasspathMain
+org.jetbrains.kotlin:kotlin-scripting-jvm:1.5.31=kotlinCompilerPluginClasspathMain
+org.jetbrains.kotlin:kotlin-stdlib-common:1.4.31=kapt,kaptClasspath_kaptKotlin
+org.jetbrains.kotlin:kotlin-stdlib-common:1.5.31=compileClasspath,kotlinCompilerClasspath,kotlinCompilerPluginClasspathMain,kotlinKaptWorkerDependencies
+org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.31=kapt,kaptClasspath_kaptKotlin
+org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.0=kotlinCompilerPluginClasspathMain
+org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.31=compileClasspath
+org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.31=kapt,kaptClasspath_kaptKotlin
+org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.0=kotlinCompilerPluginClasspathMain
+org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31=compileClasspath
+org.jetbrains.kotlin:kotlin-stdlib:1.4.31=kapt,kaptClasspath_kaptKotlin
+org.jetbrains.kotlin:kotlin-stdlib:1.5.31=compileClasspath,kotlinCompilerClasspath,kotlinCompilerPluginClasspathMain,kotlinKaptWorkerDependencies
+org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.5.0=kotlinCompilerPluginClasspathMain
+org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0=kotlinCompilerPluginClasspathMain
+org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.2.0=kapt,kaptClasspath_kaptKotlin
+org.jetbrains:annotations:13.0=compileClasspath,kapt,kaptClasspath_kaptKotlin,kotlinCompilerClasspath,kotlinCompilerPluginClasspathMain,kotlinKaptWorkerDependencies
+org.ow2.asm:asm:7.1=kapt,kaptClasspath_kaptKotlin
+empty=_classStructurekaptKotlin

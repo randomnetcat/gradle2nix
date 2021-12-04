@@ -1,0 +1,37 @@
+# This is a Gradle generated file for dependency locking.
+# Manual edits can break the build and are not advised.
+# This file is expected to be part of source control.
+com.amazonaws:aws-java-sdk-core:1.11.946=compileClasspath
+com.amazonaws:aws-java-sdk-kms:1.11.946=compileClasspath
+com.amazonaws:aws-java-sdk-s3:1.11.946=compileClasspath
+com.amazonaws:jmespath-java:1.11.946=compileClasspath
+com.fasterxml.jackson.core:jackson-annotations:2.6.0=compileClasspath
+com.fasterxml.jackson.core:jackson-core:2.6.7=compileClasspath
+com.fasterxml.jackson.core:jackson-databind:2.6.7.4=compileClasspath
+com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.6.7=compileClasspath
+commons-codec:commons-codec:1.11=compileClasspath
+commons-logging:commons-logging:1.2=compileClasspath
+joda-time:joda-time:2.8.1=compileClasspath
+org.apache.httpcomponents:httpclient:4.5.13=compileClasspath
+org.apache.httpcomponents:httpcore:4.4.13=compileClasspath
+org.apache.ivy:ivy:2.5.0=compileClasspath
+org.jetbrains.intellij.deps:trove4j:1.0.20181211=kotlinCompilerClasspath
+org.jetbrains.kotlin:kotlin-compiler-embeddable:1.5.31=kotlinCompilerClasspath
+org.jetbrains.kotlin:kotlin-daemon-embeddable:1.5.31=kotlinCompilerClasspath
+org.jetbrains.kotlin:kotlin-reflect:1.5.31=kotlinCompilerClasspath
+org.jetbrains.kotlin:kotlin-script-runtime:1.5.31=kotlinCompilerClasspath,kotlinCompilerPluginClasspathMain
+org.jetbrains.kotlin:kotlin-scripting-common:1.5.31=kotlinCompilerPluginClasspathMain
+org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:1.5.31=kotlinCompilerPluginClasspathMain
+org.jetbrains.kotlin:kotlin-scripting-compiler-impl-embeddable:1.5.31=kotlinCompilerPluginClasspathMain
+org.jetbrains.kotlin:kotlin-scripting-jvm:1.5.31=kotlinCompilerPluginClasspathMain
+org.jetbrains.kotlin:kotlin-stdlib-common:1.5.31=compileClasspath,kotlinCompilerClasspath,kotlinCompilerPluginClasspathMain
+org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.0=kotlinCompilerPluginClasspathMain
+org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.31=compileClasspath
+org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.0=kotlinCompilerPluginClasspathMain
+org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31=compileClasspath
+org.jetbrains.kotlin:kotlin-stdlib:1.5.31=compileClasspath,kotlinCompilerClasspath,kotlinCompilerPluginClasspathMain
+org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.5.0=kotlinCompilerPluginClasspathMain
+org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0=kotlinCompilerPluginClasspathMain
+org.jetbrains:annotations:13.0=compileClasspath,kotlinCompilerClasspath,kotlinCompilerPluginClasspathMain
+software.amazon.ion:ion-java:1.0.2=compileClasspath
+empty=
