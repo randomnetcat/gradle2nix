@@ -13,9 +13,9 @@ dependencies {
     implementation("com.github.ajalt:clikt:2.8.0")
     implementation("org.slf4j:slf4j-api:2.0.0-alpha1")
     runtimeOnly("org.slf4j:slf4j-simple:2.0.0-alpha1")
-    implementation("com.squareup.moshi:moshi-adapters:1.11.0")
-    implementation("com.squareup.moshi:moshi-kotlin:1.11.0")
-    kapt("com.squareup.moshi:moshi-kotlin-codegen:1.11.0")
+    implementation("com.squareup.moshi:moshi-adapters:1.12.0")
+    implementation("com.squareup.moshi:moshi-kotlin:1.12.0")
+    kapt("com.squareup.moshi:moshi-kotlin-codegen:1.12.0")
     implementation("com.squareup.okio:okio:3.0.0-alpha.1")
 
     testRuntimeOnly(kotlin("reflect"))

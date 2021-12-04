@@ -11,28 +11,28 @@ subprojects {
 }
 
 allprojects {
-    plugins.withType<JavaBasePlugin> {
-        this@allprojects.withConvention(JavaPluginConvention::class) {
-            sourceSets.all {
-                configurations {
-                    named(compileClasspathConfigurationName) {
-                        resolutionStrategy.activateDependencyLocking()
-                    }
-                    named(runtimeClasspathConfigurationName) {
-                        resolutionStrategy.activateDependencyLocking()
-                    }
+    extensions.findByType<JavaPluginExtension>()?.apply {
+        toolchain.languageVersion.set(JavaLanguageVersion.of("1.8"))
+
+        sourceSets.all {
+            configurations {
+                named(compileClasspathConfigurationName) {
+                    resolutionStrategy.activateDependencyLocking()
+                }
+                named(runtimeClasspathConfigurationName) {
+                    resolutionStrategy.activateDependencyLocking()
                 }
             }
+        }
 
-            tasks.register("lock") {
-                doFirst {
-                    assert(gradle.startParameter.isWriteDependencyLocks)
-                    file("buildscript-gradle.lockfile").delete()
-                    file("gradle.lockfile").delete()
-                }
-                doLast {
-                    configurations.matching { it.isCanBeResolved }.all { resolve() }
-                }
+        tasks.register("lock") {
+            doFirst {
+                assert(gradle.startParameter.isWriteDependencyLocks)
+                file("buildscript-gradle.lockfile").delete()
+                file("gradle.lockfile").delete()
+            }
+            doLast {
+                configurations.matching { it.isCanBeResolved }.all { resolve() }
             }
         }
     }
@@ -40,7 +40,7 @@ allprojects {
 
 tasks {
     wrapper {
-        gradleVersion = "6.8.1"
+        gradleVersion = "7.3.1"
         distributionType = Wrapper.DistributionType.ALL
     }
 }

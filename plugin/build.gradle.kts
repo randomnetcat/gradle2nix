@@ -21,7 +21,7 @@ dependencyLocking {
 }
 
 configurations {
-    compile {
+    implementation {
         dependencies.remove(project.dependencies.gradleApi())
     }
 }
@@ -40,9 +40,9 @@ dependencies {
     compatTestImplementation("io.strikt:strikt-core:0.28.2")
     compatTestImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0")
     compatTestImplementation("org.junit.jupiter:junit-jupiter-params:5.7.0")
-    compatTestImplementation(embeddedKotlin("reflect"))
-    compatTestImplementation(embeddedKotlin("stdlib-jdk8"))
-    compatTestImplementation(embeddedKotlin("test-junit5"))
+    compatTestImplementation(kotlin("reflect"))
+    compatTestImplementation(kotlin("stdlib-jdk8"))
+    compatTestImplementation(kotlin("test-junit5"))
     compatTestImplementation(gradleTestKit())
     compatTestImplementation(project(":model"))
     compatTestRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.0")
@@ -58,10 +58,6 @@ gradlePlugin {
             implementationClass = "org.nixos.gradle2nix.Gradle2NixPlugin"
         }
     }
-}
-
-kotlinDslPluginOptions {
-    experimentalWarning.set(false)
 }
 
 stutter {
