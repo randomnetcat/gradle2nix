@@ -11,21 +11,6 @@ subprojects {
 }
 
 allprojects {
-    extensions.findByType<JavaPluginExtension>()?.apply {
-        toolchain.languageVersion.set(JavaLanguageVersion.of("1.8"))
-
-        sourceSets.all {
-            configurations {
-                named(compileClasspathConfigurationName) {
-                    resolutionStrategy.activateDependencyLocking()
-                }
-                named(runtimeClasspathConfigurationName) {
-                    resolutionStrategy.activateDependencyLocking()
-                }
-            }
-        }
-    }
-
     tasks.register("lock") {
         doFirst {
             assert(gradle.startParameter.isWriteDependencyLocks)
@@ -36,6 +21,8 @@ allprojects {
             configurations.matching { it.isCanBeResolved }.all { resolve() }
         }
     }
+
+    dependencyLocking.lockAllConfigurations()
 }
 
 tasks {
