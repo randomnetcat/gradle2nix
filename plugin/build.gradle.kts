@@ -38,15 +38,15 @@ dependencies {
     compatTestImplementation("dev.minutest:minutest:2.0.0-alpha")
     compatTestImplementation("io.javalin:javalin:3.13.3")
     compatTestImplementation("io.strikt:strikt-core:0.28.2")
-    compatTestImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0")
-    compatTestImplementation("org.junit.jupiter:junit-jupiter-params:5.7.0")
+    compatTestImplementation(libs.junit.api)
+    compatTestImplementation(libs.junit.params)
     compatTestImplementation(kotlin("reflect"))
     compatTestImplementation(kotlin("stdlib-jdk8"))
     compatTestImplementation(kotlin("test-junit5"))
     compatTestImplementation(gradleTestKit())
     compatTestImplementation(project(":model"))
-    compatTestRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.0")
-    compatTestRuntimeOnly("org.junit.platform:junit-platform-launcher:5.7.0")
+    compatTestRuntimeOnly(libs.junit.engine)
+    compatTestRuntimeOnly(libs.junit.launcher)
 }
 
 gradlePlugin {

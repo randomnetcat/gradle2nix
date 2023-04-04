@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm")
+    alias(libs.plugins.kotlin.jvm)
 }
 
 dependencies {
@@ -7,11 +7,12 @@ dependencies {
     api("com.amazonaws:aws-java-sdk-s3:1.11.946")
 
     testImplementation("com.adobe.testing:s3mock-junit5:2.1.28")
-    testImplementation("io.strikt:strikt-core:0.28.2")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0")
-    testImplementation("org.junit.jupiter:junit-jupiter-params:5.7.0")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.0")
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher:5.7.0")
+    testImplementation(libs.strikt.core)
+    testImplementation(libs.strikt.jvm)
+    testImplementation(libs.junit.api)
+    testImplementation(libs.junit.params)
+    testRuntimeOnly(libs.junit.engine)
+    testRuntimeOnly(libs.junit.launcher)
 }
 
 tasks {

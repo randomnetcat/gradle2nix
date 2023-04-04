@@ -1,8 +1,8 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm")
-    kotlin("kapt")
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.kotlin.kapt)
     application
 }
 
@@ -13,15 +13,16 @@ dependencies {
     implementation("com.github.ajalt:clikt:2.8.0")
     implementation("org.slf4j:slf4j-api:2.0.0-alpha1")
     runtimeOnly("org.slf4j:slf4j-simple:2.0.0-alpha1")
-    implementation("com.squareup.moshi:moshi-adapters:1.12.0")
-    implementation("com.squareup.moshi:moshi-kotlin:1.12.0")
-    kapt("com.squareup.moshi:moshi-kotlin-codegen:1.12.0")
+    implementation(libs.moshi.adapters)
+    implementation(libs.moshi.kotlin)
+    kapt(libs.moshi.codegen)
     implementation("com.squareup.okio:okio:3.0.0-alpha.1")
 
     testRuntimeOnly(kotlin("reflect"))
     testImplementation("org.spekframework.spek2:spek-dsl-jvm:2.0.15")
     testRuntimeOnly("org.spekframework.spek2:spek-runner-junit5:2.0.15")
-    testImplementation("io.strikt:strikt-core:0.28.2")
+    testImplementation(libs.strikt.core)
+    testImplementation(libs.strikt.jvm)
 }
 
 application {

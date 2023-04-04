@@ -101,7 +101,7 @@ data class DefaultArtifactIdentifier(
     override val name: String,
     override val version: String,
     override val type: String,
-    override val extension: String = type,
+    override val extension: String? = type,
     override val classifier: String? = null
 ) : ArtifactIdentifier, Comparable<DefaultArtifactIdentifier>, Serializable {
     constructor(model: ArtifactIdentifier) : this(

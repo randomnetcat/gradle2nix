@@ -1,10 +1,10 @@
 plugins {
-    kotlin("jvm")
-    kotlin("kapt")
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.kotlin.kapt)
 }
 
 dependencies {
-    api("com.squareup.moshi:moshi:1.12.0")
-    kapt("com.squareup.moshi:moshi-kotlin-codegen:1.12.0")
+    api(libs.moshi.core)
+    kapt(libs.moshi.codegen)
     implementation("net.swiftzer.semver:semver:1.1.1")
 }

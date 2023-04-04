@@ -217,7 +217,7 @@ private fun Project.buildscriptDependencies(
     val explicitRepositories = buildscript.repositories.filterIsInstance<ResolutionAwareRepository>()
 
     val builtinRepositories = serviceOf<PluginDependencyResolutionServices>()
-        .resolveRepositoryHandler
+        .pluginRepositoryHandler
         .filterIsInstance<ResolutionAwareRepository>()
 
     val resolverFactory = ConfigurationResolverFactory(

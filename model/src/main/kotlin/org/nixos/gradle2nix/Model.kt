@@ -46,6 +46,6 @@ interface ArtifactIdentifier {
     val name: String
     val version: String
     val type: String
-    val extension: String
+    val extension: String?
     val classifier: String?
 }
